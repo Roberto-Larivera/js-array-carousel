@@ -29,7 +29,7 @@ const after = document.querySelector('.after');
 after.addEventListener('click',
 
   function(){
-    if( currentSlide < (srcImg.length - 2)){
+    if( currentSlide < (srcImg.length - 1)){
       allSlide[currentSlide].classList.remove('active');
       console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
       
