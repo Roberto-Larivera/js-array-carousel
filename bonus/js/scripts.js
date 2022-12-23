@@ -29,20 +29,30 @@ const after = document.querySelector('.after');
 after.addEventListener('click',
 
   function(){
+    if( currentSlide < (srcImg.length - 2)){
+      allSlide[currentSlide].classList.remove('active');
+      console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
+      
+      currentSlide ++;
+      
+      allSlide[currentSlide].classList.add('active');
+      console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
+    }
+    else{
+      allSlide[currentSlide].classList.remove('active');
+      console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
+      
+      currentSlide = 0;
+      
+      allSlide[currentSlide].classList.add('active');
+      console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
+    }
     
-    allSlide[currentSlide].classList.remove('active');
-    console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
-    
-    currentSlide ++;
-    
-    allSlide[currentSlide].classList.add('active');
-    console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
-    
-    before.classList.remove('ms-d-none');
+    /*before.classList.remove('ms-d-none');
     
     if(currentSlide == allSlide.length -1){
       after.classList.add('ms-d-none');
-    }
+    }*/
     
   }
 
@@ -51,20 +61,30 @@ after.addEventListener('click',
 before.addEventListener('click',
 
   function(){
+    if(currentSlide > 0){
+      allSlide[currentSlide].classList.remove('active');
+      console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
+      
+      currentSlide --;
+      
+      allSlide[currentSlide].classList.add('active');
+      console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
+    }
+    else{
+      allSlide[currentSlide].classList.remove('active');
+      console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
+      
+      currentSlide = srcImg.length -1;
+      
+      allSlide[currentSlide].classList.add('active');
+      console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
+    }
     
-    allSlide[currentSlide].classList.remove('active');
-    console.log('allSlide prima',allSlide[currentSlide],typeof allSlide);
-    
-    currentSlide --;
-    
-    allSlide[currentSlide].classList.add('active');
-    console.log('allSlide dopo',allSlide[currentSlide],typeof allSlide);
-    
-    after.classList.remove('ms-d-none');
+    /*after.classList.remove('ms-d-none');
     
     if(currentSlide == 0){
       before.classList.add('ms-d-none');
-    }
+    }*/
   }
 
 )
