@@ -63,7 +63,11 @@ main{
     left: 15px;
 }
 
-
+.after:hover,
+.before:hover{
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.9);
+}
 
 .active{
     display: inline;
